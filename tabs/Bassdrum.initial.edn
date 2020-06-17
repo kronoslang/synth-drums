@@ -1,0 +1,196 @@
+{:documentation "Generates a kick drum sound by a rapid downward sweep of an oscillator, starting from `freq` with an exponential ramp down to 1/10th in `decay` seconds. The waveform can be adjusted by `blend`ing from sine (0) to triangle (1).\n\nThe frequency sweep is triggered by upward edges in `gate` which also provides a `release` envelope for the sound."
+ :draft-argument "0.5 - 0.5 * Gen:Pulse(2 0.5) 0.002 0.1 350 0.3 - 0.25 * Gen:Phasor(0.05) Gen:Phasor(0.03) 8 * Gen:Phasor(0.04)"
+ :identifier "Bassdrum"
+ :identity "initial"
+ :patch
+{:cables
+{["0tuxkdwn7cdzca9" 0] [:fixed "w0qvfe2iby6y410" 0]
+ ["3d64ko1n33431pt" 0] [:fixed "ocq1yj8epdqyuse" 0]
+ ["3d64ko1n33431pt" 1] [:fixed "ghobpfs9n8d4y66" 4]
+ ["6nn57fe4blq46t2" 0] [:fixed "hlmbjqs5lh43vrq" 0]
+ ["7ds5pldaj2qdcj7" 0] [:fixed "icfckihcfe5e1b2" 0]
+ ["7j77txcuiut7v9a" 0] [:fixed "qtg68d99v0ldrnb" 0]
+ ["byv68j530q6reid" 0] [:fixed "2jx66plv0cc51s9" 0]
+ ["byv68j530q6reid" 1] [:fixed "3d64ko1n33431pt" 0]
+ ["e1yvsj3gmbuy4iy" 0] [:fixed "j46fkhqhm9aura9" 0]
+ ["e1yvsj3gmbuy4iy" 1] [:fixed "byv68j530q6reid" 0]
+ ["f9c6ka3mdrvis3y" 0] [:fixed "e1yvsj3gmbuy4iy" 0]
+ ["f9c6ka3mdrvis3y" 1] [:fixed "6nn57fe4blq46t2" 0]
+ ["g743ooxw57rozyi" 0] [:fixed "nnflqi7il2lqstn" 0]
+ ["g743ooxw57rozyi" 1] [:fixed "ofqxo2bm6midt3r" 0]
+ ["g743ooxw57rozyi" 2] [:fixed "ghobpfs9n8d4y66" 6]
+ ["hlmbjqs5lh43vrq" 0] [:fixed "7ds5pldaj2qdcj7" 0]
+ ["hlmbjqs5lh43vrq" 1] [:fixed "ghobpfs9n8d4y66" 3]
+ ["hlmbjqs5lh43vrq" 2] [:fixed "f9c6ka3mdrvis3y" 0]
+ ["icfckihcfe5e1b2" 0] [:fixed "ghobpfs9n8d4y66" 0]
+ ["nnflqi7il2lqstn" 0] [:fixed "ghobpfs9n8d4y66" 5]
+ ["nnflqi7il2lqstn" 1] [:fixed "rteylv01qa1w9u2" 0]
+ ["nnflqi7il2lqstn" 2] [:fixed "0tuxkdwn7cdzca9" 0]
+ ["ofqxo2bm6midt3r" 0] [:fixed "ghobpfs9n8d4y66" 0]
+ ["ofqxo2bm6midt3r" 1] [:fixed "ghobpfs9n8d4y66" 1]
+ ["ofqxo2bm6midt3r" 2] [:fixed "ghobpfs9n8d4y66" 2]
+ ["qtg68d99v0ldrnb" 0] [:fixed "g743ooxw57rozyi" 0]
+ ["rteylv01qa1w9u2" 0] [:fixed "v6olugou0bg432b" 0]
+ ["rteylv01qa1w9u2" 1] [:fixed "25tbquo1kzvz6kc" 0]
+ ["v6olugou0bg432b" 0] [:fixed "w0qvfe2iby6y410" 0]
+ ["w0qvfe2iby6y410" 0] [:fixed "f9c6ka3mdrvis3y" 0]}
+ :nodes
+{"0tuxkdwn7cdzca9" 
+{:inputs ["phase"]
+ :label "Gen:Shape:Triangle($phase)"
+ :outputs [""]
+ :parsed [:fn "Gen:Shape:Triangle" [:tuple [:free-var "phase"]]]
+ :pos [290 182]
+ }
+ "25tbquo1kzvz6kc" 
+{:inputs []
+ :label "#5"
+ :outputs [""]
+ :parsed [:invariant "5"]
+ :pos [359 245]
+ }
+ "2jx66plv0cc51s9" 
+{:inputs []
+ :label "1"
+ :outputs [""]
+ :parsed [:float "1"]
+ :pos [-538 127]
+ :selected true}
+ "3d64ko1n33431pt" 
+{:inputs ["a" "b" "more..."]
+ :label "*"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:free-var "b"] [:free-var "more..."]]
+ :pos [-478 52]
+ :selected true}
+ "6nn57fe4blq46t2" 
+{:inputs ["sig~"]
+ :label "z-1($sig~)"
+ :outputs [""]
+ :parsed [:fn "z-1" [:tuple [:free-var "sig~"]]]
+ :pos [43 148]
+ :selected true}
+ "7ds5pldaj2qdcj7" 
+{:inputs ["sig"]
+ :label "Gen:Signal($sig)"
+ :outputs [""]
+ :parsed [:fn "Gen:Signal" [:tuple [:free-var "sig"]]]
+ :pos [-233 -13]
+ :selected true}
+ "7j77txcuiut7v9a" 
+{:inputs ["sig"]
+ :label "Filter:DC($sig)"
+ :outputs [""]
+ :parsed [:fn "Filter:DC" [:tuple [:free-var "sig"]]]
+ :pos [382 -21]
+ }
+ "byv68j530q6reid" 
+{:inputs ["a" "b" "more..."]
+ :label "/"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "/" [:free-var "b"] [:free-var "more..."]]
+ :pos [-448 127]
+ :selected true}
+ "e1yvsj3gmbuy4iy" 
+{:inputs ["a" "b"]
+ :label "Math:Pow($a $b)"
+ :outputs [""]
+ :parsed [:fn "Math:Pow" [:tuple [:free-var "a"] [:free-var "b"]]]
+ :pos [-229 206]
+ :selected true}
+ "f9c6ka3mdrvis3y" 
+{:inputs ["a" "b" "more..."]
+ :label "*"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:free-var "b"] [:free-var "more..."]]
+ :pos [90 209]
+ :selected true}
+ "g743ooxw57rozyi" 
+{:ephemeral-inputs #{"more"}
+ :inputs ["a" "b" "more" "more..."]
+ :label "*"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:free-var "b"] [:free-var "more"] [:free-var "more..."]]
+ :pos [224 -135]
+ }
+ "ghobpfs9n8d4y66" 
+{:color 0
+ :inputs []
+ :label "(gate attack release freq decay blend drive) = arg"
+ :outputs ["gate" "attack" "release" "freq" "decay" "blend" "drive"]
+ :parsed "arg"
+ :pos [-702 -202]
+ }
+ "hlmbjqs5lh43vrq" 
+{:inputs ["truth" "when-true" "when-false"]
+ :label "Algorithm:Choose($truth $when-true $when-false)"
+ :outputs [""]
+ :parsed [:fn "Algorithm:Choose" [:tuple [:free-var "truth"] [:free-var "when-true"] [:free-var "when-false"]]]
+ :pos [-85 58]
+ :selected true}
+ "icfckihcfe5e1b2" 
+{:inputs ["sig"]
+ :label "Control:Edge+($sig)"
+ :outputs [""]
+ :parsed [:fn "Control:Edge+" [:tuple [:free-var "sig"]]]
+ :pos [-348 -13]
+ :selected true}
+ "j46fkhqhm9aura9" 
+{:inputs []
+ :label "0.1"
+ :outputs [""]
+ :parsed [:float "0.1"]
+ :pos [-346 206]
+ :selected true}
+ "nnflqi7il2lqstn" 
+{:flip-y true
+ :inputs ["mix" "a" "b"]
+ :label "Math:Mix($mix $a $b)"
+ :outputs [""]
+ :parsed [:fn "Math:Mix" [:tuple [:free-var "mix"] [:free-var "a"] [:free-var "b"]]]
+ :pos [28 -89]
+ }
+ "ocq1yj8epdqyuse" 
+{:inputs []
+ :label "Gen:Rate()"
+ :outputs [""]
+ :parsed [:fn "Gen:Rate" [:tuple]]
+ :pos [-561 52]
+ :selected true}
+ "ofqxo2bm6midt3r" 
+{:inputs ["gate" "attack" "release"]
+ :label "Envelope:AR($gate $attack $release)"
+ :outputs [""]
+ :parsed [:fn "Envelope:AR" [:tuple [:free-var "gate"] [:free-var "attack"] [:free-var "release"]]]
+ :pos [-393 -217]
+ }
+ "qtg68d99v0ldrnb" 
+{:inputs ["p"]
+ :label "Approx:Fast:Tanh($p)"
+ :outputs [""]
+ :parsed [:fn "Approx:Fast:Tanh" [:tuple [:free-var "p"]]]
+ :pos [326 -137]
+ }
+ "rteylv01qa1w9u2" 
+{:inputs ["x" "order"]
+ :label "Approx:Cosine-Shape($x $order)"
+ :outputs [""]
+ :parsed [:fn "Approx:Cosine-Shape" [:tuple [:free-var "x"] [:free-var "order"]]]
+ :pos [424 301]
+ }
+ "v6olugou0bg432b" 
+{:inputs ["a"]
+ :label "- 0.25"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "-" [:float "0.25"]]
+ :pos [271 301]
+ }
+ "w0qvfe2iby6y410" 
+{:inputs ["freq"]
+ :label "Gen:Phasor($freq)"
+ :outputs [""]
+ :parsed [:fn "Gen:Phasor" [:tuple [:free-var "freq"]]]
+ :pos [174 241]
+ :selected true}}
+ :scale 1
+ :scroll [0 0]}}

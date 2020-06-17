@@ -1,0 +1,12 @@
+{:assets 
+{}
+ :current-tab 0
+ :manifest 
+{:dependencies 
+{}
+ :description "Analog-style synthetic drum sounds"
+ :license "https://www.eclipse.org/legal/epl-v10.html"
+ :name "Synth-Drums"
+ :url "https://kronoslang.io"
+ :version "0.1"}
+ :tabs ("tabs/draft.irhqfs46o1ukban.edn" "tabs/Bassdrum.initial.edn" "tabs/Analog-Snare.hw5ootrroswswxz.edn" "tabs/Hihat.1b4w1wainpjiy2n.edn")}

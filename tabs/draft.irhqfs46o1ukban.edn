@@ -1,0 +1,146 @@
+{
+ :identity "irhqfs46o1ukban"
+ :patch
+{:cables
+{["0ndqop6xxbdrhbb" 0] [:fixed "an0zxldulu2pm9b" 0]
+ ["0ndqop6xxbdrhbb" 1] [:fixed "tkycol1992qg70y" 0]
+ ["1lxitqq592peoxl" 0] [:fixed "6iylzvxh31gb90" 0]
+ ["3gg3s9x3ltku1kq" 0] [:fixed "mfrcpzd83yhh7zn" 0]
+ ["3s91ud91y49id68" 0] [:fixed "0ndqop6xxbdrhbb" 0]
+ ["41o97f6cwzbg8cl" 0] [:fixed "2fvr3arvq2hxv20" 0]
+ ["5tzy4vdf0dkpy0k" 0] [:fixed "6hgz3pwjj5sidln" 0]
+ ["5wjsg8dxhs7ltld" 0] [:fixed "3gg3s9x3ltku1kq" 0]
+ ["6hgz3pwjj5sidln" 0] [:fixed "3s91ud91y49id68" 1]
+ ["6iylzvxh31gb90" 0] [:fixed "3s91ud91y49id68" 0]
+ ["9fa9w8mygc5y2aq" 0] [:fixed "tkycol1992qg70y" 0]
+ ["aa0s07c8a0cseb7" 0] [:fixed "zcfpqf88kb9lwpy" 0]
+ ["aa0s07c8a0cseb7" 1] [:fixed "5tzy4vdf0dkpy0k" 0]
+ ["aa0s07c8a0cseb7" 2] [:fixed "1lxitqq592peoxl" 0]
+ ["mfrcpzd83yhh7zn" 0] [:fixed "9fa9w8mygc5y2aq" 0]
+ ["mfrcpzd83yhh7zn" 1] [:fixed "3s91ud91y49id68" 2]
+ ["tkycol1992qg70y" 0] [:fixed "41o97f6cwzbg8cl" 0]
+ ["zcfpqf88kb9lwpy" 0] [:fixed "5wjsg8dxhs7ltld" 0]}
+ :nodes
+{"0ndqop6xxbdrhbb" 
+{:inputs ["vector" "index"]
+ :label "Select-Wrap($vector $index)"
+ :outputs [""]
+ :parsed [:fn "Select-Wrap" [:tuple [:free-var "vector"] [:free-var "index"]]]
+ :pos [-365 -332]
+ }
+ "1lxitqq592peoxl" 
+{:inputs ["a"]
+ :label "* (0 .o 1)"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:tuple [:widget "4c60ik" 1 {:type :dial, :skin :circular, :min [:float "0"], :max [:float "1"]}]]]
+ :pos [489 -326]
+ }
+ "2fvr3arvq2hxv20" 
+{:inputs []
+ :label "0.46"
+ :outputs [""]
+ :parsed [:float "0.46"]
+ :pos [-666 -538]
+ }
+ "3gg3s9x3ltku1kq" 
+{:inputs ["a"]
+ :label "& 1"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "&" [:float "1"]]
+ :pos [-239 -27]
+ }
+ "3s91ud91y49id68" 
+{:inputs ["step"]
+ :label "(bd sd hh nil) = $step"
+ :outputs ["bd" "sd" "hh" "nil"]
+ :parsed [:free-var "step"]
+ :pos [-237 -301]
+ }
+ "41o97f6cwzbg8cl" 
+{:inputs ["freq"]
+ :label "Gen:Phasor($freq)"
+ :outputs [""]
+ :parsed [:fn "Gen:Phasor" [:tuple [:free-var "freq"]]]
+ :pos [-549 -538]
+ }
+ "5tzy4vdf0dkpy0k" 
+{:inputs ["a"]
+ :label "* (0 .o 1)"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:tuple [:widget "livho3" 1 {:type :dial, :skin :circular, :min [:float "0"], :max [:float "1"]}]]]
+ :pos [489 -132]
+ }
+ "5wjsg8dxhs7ltld" 
+{:inputs ["gate"]
+ :label "Hihat($gate 9500 2000 0.002 0.1 0.5 0.1)"
+ :outputs [""]
+ :parsed [:fn "Hihat" [:tuple [:free-var "gate"] [:float "9500"] [:float "2000"] [:float "0.002"] [:float "0.1"] [:float "0.5"] [:float "0.1"]]]
+ :pos [130 34]
+ }
+ "6hgz3pwjj5sidln" 
+{:inputs ["gate"]
+ :label "Analog-Snare($gate 0 0.22000000000000003 0.5 0.6400000000000001 0.32999999999999996 1 0.5700000000000001)"
+ :outputs [""]
+ :parsed [:fn "Analog-Snare" [:tuple [:free-var "gate"] [:widget "uga8t1" 0 {:type :dial, :skin :circular, :min [:float "0"], :max [:float "0.005"]}] [:widget "gjriq8" 0.26 {:type :dial, :skin :circular, :min [:float "0.05"], :max [:float "0.5"]}] [:widget "-ixjv82" 0.395 {:type :dial, :skin :circular, :min [:float "100"], :max [:float "1000"]}] [:widget "-px5lex" 0 {:type :dial, :skin :circular, :min [:float "25"], :max [:float "200"]}] [:widget "tjt77o" 0.6399999999999999 {:type :dial, :skin :circular, :min [:float "0"], :max [:float "1"]}] [:widget "-hgiuof" 0 {:type :dial, :skin :circular, :min [:float "100"], :max [:float "500"]}] [:widget "z4xl7f" 0.51 {:type :dial, :skin :circular, :min [:float "300"], :max [:float "6000"]}]]]
+ :pos [110 -130]
+ }
+ "6iylzvxh31gb90" 
+{:inputs ["gate"]
+ :label "Bassdrum($gate 0.5 0.5 0.5 0.5 0.5 0.5)"
+ :outputs [""]
+ :parsed [:fn "Bassdrum" [:tuple [:free-var "gate"] [:widget "-q75goi" 0 {:type :dial, :skin :circular, :min [:float "0"], :max [:float "0.01"]}] [:widget "ml3mc2" 0.5700000000000001 {:type :dial, :skin :circular, :min [:float "0.05"], :max [:float "0.3"]}] [:widget "ykxdv2" 0.52 {:type :dial, :skin :circular, :min [:float "100"], :max [:float "400"]}] [:widget "-ofwooe" 0.09999999999999987 {:type :dial, :skin :circular, :min [:float "0.05"], :max [:float "0.3"]}] [:widget "axkcfd" 0.215 {:type :dial, :skin :circular, :min [:float "0"], :max [:float "1"]}] [:widget "szbfo2" 0 {:type :dial, :skin :circular, :min [:float "1"], :max [:float "8"]}]]]
+ :pos [165 -324]
+ }
+ "9fa9w8mygc5y2aq" 
+{:inputs ["x"]
+ :label "Fraction($x)"
+ :outputs [""]
+ :parsed [:fn "Fraction" [:tuple [:free-var "x"]]]
+ :pos [-471 -24]
+ }
+ "aa0s07c8a0cseb7" 
+{:ephemeral-inputs #{"numbers" "numbers2" "numbers3"}
+ :inputs ["numbers" "numbers2" "numbers3" "numbers..."]
+ :label "Average($numbers...)"
+ :outputs [""]
+ :parsed [:fn "Average" [:tuple [:free-var "numbers"] [:free-var "numbers2"] [:free-var "numbers3"] [:free-var "numbers..."]]]
+ :pos [62 150]
+ }
+ "an0zxldulu2pm9b" 
+{:inputs []
+ :label "[[Select([0 0.25 0.5 0.75] 0) Select([0 0.25 0.5 0.75] 0) Select([0 0.25 0.5 0.75] 0)] [Select([0 0.25 0.5 0.75] 0) Select([0 0.25 0.5 0.75] 0) Select([0 0.25 0.5 0.75] 0)] [Select([0 0.25 0.5 0.75] 0) Select([0 0.25 0.5 0.75] 0) Select([0 0.25 0.5 0.75] 0)] [Select([0 0.25 0.5 0.75] 0) Select([0 0.25 0.5 0.75] 0) Select([0 0.25 0.5 0.75] 0)] [Select([0 0.25 0.5 0.75] 0) Select([0 0.25 0.5 0.75] 0) Select([0 0.25 0.5 0.75] 0)] [Select([0 0.25 0.5 0.75] 0) Select([0 0.25 0.5 0.75] 0) Select([0 0.25 0.5 0.75] 0)] [Select([0 0.25 0.5 0.75] 0) Select([0 0.25 0.5 0.75] 0) Select([0 0.25 0.5 0.75] 0)] [Select([0 0.25 0.5 0.75] 0) Select([0 0.25 0.5 0.75] 0) Select([0 0.25 0.5 0.75] 0)]]"
+ :outputs [""]
+ :parsed [:list [:list [:widget "zeqygm" 0.75 {:type :toggle, :render [:states], :states [[:float "0"] [:float "0.25"] [:float "0.5"] [:float "0.75"]]}] [:widget "-7oecfw" 0 {:type :toggle, :render [:states], :states [[:float "0"] [:float "0.25"] [:float "0.5"] [:float "0.75"]]}] [:widget "pw5kba" 0.25 {:type :toggle, :render [:states], :states [[:float "0"] [:float "0.25"] [:float "0.5"] [:float "0.75"]]}]] [:list [:widget "-b6jmn5" 0 {:type :toggle, :render [:states], :states [[:float "0"] [:float "0.25"] [:float "0.5"] [:float "0.75"]]}] [:widget "-yofyms" 0 {:type :toggle, :render [:states], :states [[:float "0"] [:float "0.25"] [:float "0.5"] [:float "0.75"]]}] [:widget "-ebmfly" 0.75 {:type :toggle, :render [:states], :states [[:float "0"] [:float "0.25"] [:float "0.5"] [:float "0.75"]]}]] [:list [:widget "-fc8ojp" 0 {:type :toggle, :render [:states], :states [[:float "0"] [:float "0.25"] [:float "0.5"] [:float "0.75"]]}] [:widget "-k8y5au" 0.75 {:type :toggle, :render [:states], :states [[:float "0"] [:float "0.25"] [:float "0.5"] [:float "0.75"]]}] [:widget "-udlzsv" 0.25 {:type :toggle, :render [:states], :states [[:float "0"] [:float "0.25"] [:float "0.5"] [:float "0.75"]]}]] [:list [:widget "-ikqjzi" 0.25 {:type :toggle, :render [:states], :states [[:float "0"] [:float "0.25"] [:float "0.5"] [:float "0.75"]]}] [:widget "-8fgma1" 0 {:type :toggle, :render [:states], :states [[:float "0"] [:float "0.25"] [:float "0.5"] [:float "0.75"]]}] [:widget "lztiam" 0.25 {:type :toggle, :render [:states], :states [[:float "0"] [:float "0.25"] [:float "0.5"] [:float "0.75"]]}]] [:list [:widget "-1teld" 0.5 {:type :toggle, :render [:states], :states [[:float "0"] [:float "0.25"] [:float "0.5"] [:float "0.75"]]}] [:widget "liqevf" 0 {:type :toggle, :render [:states], :states [[:float "0"] [:float "0.25"] [:float "0.5"] [:float "0.75"]]}] [:widget "-zfa400" 0.25 {:type :toggle, :render [:states], :states [[:float "0"] [:float "0.25"] [:float "0.5"] [:float "0.75"]]}]] [:list [:widget "-7av3e7" 0 {:type :toggle, :render [:states], :states [[:float "0"] [:float "0.25"] [:float "0.5"] [:float "0.75"]]}] [:widget "ajnj9f" 0 {:type :toggle, :render [:states], :states [[:float "0"] [:float "0.25"] [:float "0.5"] [:float "0.75"]]}] [:widget "-8yat5i" 0.5 {:type :toggle, :render [:states], :states [[:float "0"] [:float "0.25"] [:float "0.5"] [:float "0.75"]]}]] [:list [:widget "qa5njq" 0 {:type :toggle, :render [:states], :states [[:float "0"] [:float "0.25"] [:float "0.5"] [:float "0.75"]]}] [:widget "tvzaz" 0.75 {:type :toggle, :render [:states], :states [[:float "0"] [:float "0.25"] [:float "0.5"] [:float "0.75"]]}] [:widget "-92jvig" 0.25 {:type :toggle, :render [:states], :states [[:float "0"] [:float "0.25"] [:float "0.5"] [:float "0.75"]]}]] [:list [:widget "-ol70s6" 0 {:type :toggle, :render [:states], :states [[:float "0"] [:float "0.25"] [:float "0.5"] [:float "0.75"]]}] [:widget "-s242m7" 0 {:type :toggle, :render [:states], :states [[:float "0"] [:float "0.25"] [:float "0.5"] [:float "0.75"]]}] [:widget "-b8gyml" 0.5 {:type :toggle, :render [:states], :states [[:float "0"] [:float "0.25"] [:float "0.5"] [:float "0.75"]]}]]]
+ :pos [-579 -480]
+ }
+ "mfrcpzd83yhh7zn" 
+{:inputs ["a" "b" "more..."]
+ :label "<"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "<" [:free-var "b"] [:free-var "more..."]]
+ :pos [-344 -27]
+ }
+ "ow72501b0t8bkfc" 
+{:edit-mode true
+ :inputs []
+ :label 1
+ :outputs [""]
+ :parsed [:widget "68vow6" 1 {:type :dial, :skin :circular, :min [:float "50"], :max [:float "200"]}]
+ :pos [-77 -230]
+ }
+ "tkycol1992qg70y" 
+{:inputs ["a"]
+ :label "* 8"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:float "8"]]
+ :pos [-425 -538]
+ }
+ "zcfpqf88kb9lwpy" 
+{:inputs ["a"]
+ :label "* (0 .o 1)"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:tuple [:widget "-xaiqv" 0.19 {:type :dial, :skin :circular, :min [:float "0"], :max [:float "1"]}]]]
+ :pos [489 32]
+ }}
+ :scale 1
+ :scroll [0 0]}}

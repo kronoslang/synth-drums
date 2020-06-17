@@ -1,0 +1,62 @@
+{:documentation "Simple bandlimited noise hihat with center frequency at `fc` and an attack-decay-sustain-release envelope."
+ :draft-argument "0.5 - 0.5 * Gen:Pulse(2 Gen:Phasor(0.1)) 9000 1800 0.001 0.05 0.6 0.2"
+ :identifier "Hihat"
+ :identity "1b4w1wainpjiy2n"
+ :patch
+{:cables
+{["6reo5eezthrp30z" 0] [:fixed "c9han75oanliecn" 0]
+ ["6reo5eezthrp30z" 1] [:fixed "4n1ma81qtvs8d89" 1]
+ ["6reo5eezthrp30z" 2] [:fixed "4n1ma81qtvs8d89" 2]
+ ["c9han75oanliecn" 0] [:fixed "kc8s2k7uoqiq73" 0]
+ ["c9han75oanliecn" 1] [:fixed "o622q3mjxbyp3lp" 0]
+ ["c9han75oanliecn" 2] [:fixed "o622q3mjxbyp3lp" 0]
+ ["kc8s2k7uoqiq73" 0] [:fixed "ikuhaoctg5wykb3" 0]
+ ["o622q3mjxbyp3lp" 0] [:fixed "4n1ma81qtvs8d89" 0]
+ ["o622q3mjxbyp3lp" 1] [:fixed "4n1ma81qtvs8d89" 3]
+ ["o622q3mjxbyp3lp" 2] [:fixed "4n1ma81qtvs8d89" 4]
+ ["o622q3mjxbyp3lp" 3] [:fixed "4n1ma81qtvs8d89" 5]
+ ["o622q3mjxbyp3lp" 4] [:fixed "4n1ma81qtvs8d89" 6]}
+ :nodes
+{"4n1ma81qtvs8d89" 
+{:inputs []
+ :label "(gate fc bw a d s r) = arg"
+ :outputs ["gate" "fc" "bw" "a" "d" "s" "r"]
+ :parsed "arg"
+ :pos [-576 -187]
+ }
+ "6reo5eezthrp30z" 
+{:inputs ["sig" "freq" "bw"]
+ :label "Filter:Resonator($sig $freq $bw)"
+ :outputs [""]
+ :parsed [:fn "Filter:Resonator" [:tuple [:free-var "sig"] [:free-var "freq"] [:free-var "bw"]]]
+ :pos [36 -74]
+ }
+ "c9han75oanliecn" 
+{:ephemeral-inputs #{"more"}
+ :inputs ["a" "b" "more" "more..."]
+ :label "*"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:free-var "b"] [:free-var "more"] [:free-var "more..."]]
+ :pos [-115 -77]
+ }
+ "ikuhaoctg5wykb3" 
+{:inputs []
+ :label "0.4999d"
+ :outputs [""]
+ :parsed [:double "0.4999"]
+ :pos [-440 -229]
+ :selected true}
+ "kc8s2k7uoqiq73" 
+{:inputs ["seed"]
+ :label "Gen:Noise($seed)"
+ :outputs [""]
+ :parsed [:fn "Gen:Noise" [:tuple [:free-var "seed"]]]
+ :pos [-297 -229]
+ :selected true}
+ "o622q3mjxbyp3lp" 
+{:inputs ["gate" "attack" "decay" "sustain" "release"]
+ :label "Envelope:ADSR($gate $attack $decay $sustain $release)"
+ :outputs [""]
+ :parsed [:fn "Envelope:ADSR" [:tuple [:free-var "gate"] [:free-var "attack"] [:free-var "decay"] [:free-var "sustain"] [:free-var "release"]]]
+ :pos [-333 45]
+ }}}}

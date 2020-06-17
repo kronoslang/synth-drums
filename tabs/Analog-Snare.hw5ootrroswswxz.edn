@@ -1,0 +1,197 @@
+{:documentation "Blends a snare sound from noise and a triangular waveform sweep from `freq1` to `freq2`. The mix is filtered with a resonator at `body` Hz with a bandwidth of `tone` Hz."
+ :draft-argument "0.5 - 0.5 * Gen:Pulse(1 0.5) 0 0.15 150 0.4 200 1500"
+ :identifier "Analog-Snare"
+ :identity "hw5ootrroswswxz"
+ :patch
+{:cables
+{["1lf97hpnw77e3ay" 0] [:fixed "vnttsfzps683lk" 0]
+ ["1lf97hpnw77e3ay" 1] [:fixed "pfs162o5zwq7ab1" 6]
+ ["1lf97hpnw77e3ay" 2] [:fixed "pfs162o5zwq7ab1" 7]
+ ["4vdbcbfrro74c97" 0] [:fixed "6nyojubr92xjbf3" 0]
+ ["4vdbcbfrro74c97" 1] [:fixed "ss29tcmch77zf6y" 0]
+ ["8jtzr94vsu9jz1t" 0] [:fixed "95c4qynkq1i24w" 0]
+ ["8jtzr94vsu9jz1t" 1] [:fixed "bpy8r78hu5cp3fe" 0]
+ ["8jtzr94vsu9jz1t" 2] [:fixed "hbw1xna8fosf252" 0]
+ ["926f7uzdouxo4bo" 0] [:fixed "8jtzr94vsu9jz1t" 0]
+ ["926f7uzdouxo4bo" 1] [:fixed "pfs162o5zwq7ab1" 4]
+ ["926f7uzdouxo4bo" 2] [:fixed "pfs162o5zwq7ab1" 3]
+ ["95c4qynkq1i24w" 0] [:fixed "s4lz473kg1wl557" 0]
+ ["9f42xpeixijmxzb" 0] [:fixed "926f7uzdouxo4bo" 0]
+ ["bl8hattakde98st" 0] [:fixed "pfs162o5zwq7ab1" 0]
+ ["bl8hattakde98st" 1] [:fixed "pfs162o5zwq7ab1" 1]
+ ["bl8hattakde98st" 2] [:fixed "pfs162o5zwq7ab1" 2]
+ ["c4xnjhyz088turl" 0] [:fixed "9284tu7skxmh3d8" 0]
+ ["dow2tg30awu99q" 0] [:fixed "pfs162o5zwq7ab1" 5]
+ ["dow2tg30awu99q" 1] [:fixed "9f42xpeixijmxzb" 0]
+ ["dow2tg30awu99q" 2] [:fixed "c4xnjhyz088turl" 0]
+ ["hbw1xna8fosf252" 0] [:fixed "4vdbcbfrro74c97" 0]
+ ["hbw1xna8fosf252" 1] [:fixed "jkk4b74c5ejtr26" 0]
+ ["jkk4b74c5ejtr26" 0] [:fixed "8jtzr94vsu9jz1t" 0]
+ ["o4c37y7ohxtczp" 0] [:fixed "lnz3i9wy626yjpe" 0]
+ ["o4c37y7ohxtczp" 1] [:fixed "pfs162o5zwq7ab1" 2]
+ ["s4lz473kg1wl557" 0] [:fixed "pfs162o5zwq7ab1" 0]
+ ["ss29tcmch77zf6y" 0] [:fixed "zfl15fq9qyfpxin" 0]
+ ["ss29tcmch77zf6y" 1] [:fixed "o4c37y7ohxtczp" 0]
+ ["vnttsfzps683lk" 0] [:fixed "hbw1xna8fosf252" 0]
+ ["vnttsfzps683lk" 1] [:fixed "dow2tg30awu99q" 0]
+ ["vnttsfzps683lk" 2] [:fixed "bl8hattakde98st" 0]
+ ["vnttsfzps683lk" 3] [:fixed "bl8hattakde98st" 0]}
+ :nodes
+{"1lf97hpnw77e3ay" 
+{:inputs ["sig" "freq" "bw"]
+ :label "Filter:Resonator($sig $freq $bw)"
+ :outputs [""]
+ :parsed [:fn "Filter:Resonator" [:tuple [:free-var "sig"] [:free-var "freq"] [:free-var "bw"]]]
+ :pos [644 6]
+ }
+ "20d3xu3ty6e1lu8" 
+{:inputs []
+ :label "0.05"
+ :outputs [""]
+ :parsed [:float "0.05"]
+ :pos [-77 -401]
+ }
+ "4vdbcbfrro74c97" 
+{:inputs ["a" "b"]
+ :label "Math:Pow($a $b)"
+ :outputs [""]
+ :parsed [:fn "Math:Pow" [:tuple [:free-var "a"] [:free-var "b"]]]
+ :pos [-155 225]
+ }
+ "6nyojubr92xjbf3" 
+{:inputs []
+ :label "0.1"
+ :outputs [""]
+ :parsed [:float "0.1"]
+ :pos [-272 225]
+ }
+ "8jtzr94vsu9jz1t" 
+{:inputs ["truth" "when-true" "when-false"]
+ :label "Algorithm:Choose($truth $when-true $when-false)"
+ :outputs [""]
+ :parsed [:fn "Algorithm:Choose" [:tuple [:free-var "truth"] [:free-var "when-true"] [:free-var "when-false"]]]
+ :pos [-11 77]
+ }
+ "926f7uzdouxo4bo" 
+{:inputs ["mix" "a" "b"]
+ :label "Math:Mix($mix $a $b)"
+ :outputs [""]
+ :parsed [:fn "Math:Mix" [:tuple [:free-var "mix"] [:free-var "a"] [:free-var "b"]]]
+ :pos [101 -16]
+ }
+ "9284tu7skxmh3d8" 
+{:inputs []
+ :label "0.499d"
+ :outputs [""]
+ :parsed [:double "0.499"]
+ :pos [92 -141]
+ }
+ "95c4qynkq1i24w" 
+{:inputs ["sig"]
+ :label "Gen:Signal($sig)"
+ :outputs [""]
+ :parsed [:fn "Gen:Signal" [:tuple [:free-var "sig"]]]
+ :pos [-159 6]
+ }
+ "9f42xpeixijmxzb" 
+{:inputs ["freq"]
+ :label "Gen:Tri($freq)"
+ :outputs [""]
+ :parsed [:fn "Gen:Tri" [:tuple [:free-var "freq"]]]
+ :pos [212 -34]
+ }
+ "bl8hattakde98st" 
+{:inputs ["gate" "attack" "release"]
+ :label "Envelope:AR($gate $attack $release)"
+ :outputs [""]
+ :parsed [:fn "Envelope:AR" [:tuple [:free-var "gate"] [:free-var "attack"] [:free-var "release"]]]
+ :pos [-86 -267]
+ }
+ "bpy8r78hu5cp3fe" 
+{:inputs []
+ :label "1"
+ :outputs [""]
+ :parsed [:float "1"]
+ :pos [-236 -94]
+ }
+ "c4xnjhyz088turl" 
+{:inputs ["seed"]
+ :label "Gen:Noise($seed)"
+ :outputs [""]
+ :parsed [:fn "Gen:Noise" [:tuple [:free-var "seed"]]]
+ :pos [212 -118]
+ }
+ "dow2tg30awu99q" 
+{:inputs ["mix" "a" "b"]
+ :label "Math:Mix($mix $a $b)"
+ :outputs [""]
+ :parsed [:fn "Math:Mix" [:tuple [:free-var "mix"] [:free-var "a"] [:free-var "b"]]]
+ :pos [368 12]
+ }
+ "hbw1xna8fosf252" 
+{:inputs ["a" "b" "more..."]
+ :label "*"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:free-var "b"] [:free-var "more..."]]
+ :pos [164 228]
+ }
+ "jkk4b74c5ejtr26" 
+{:inputs ["sig~"]
+ :label "z-1($sig~)"
+ :outputs [""]
+ :parsed [:fn "z-1" [:tuple [:free-var "sig~"]]]
+ :pos [117 167]
+ }
+ "lnz3i9wy626yjpe" 
+{:inputs []
+ :label "Gen:Rate()"
+ :outputs [""]
+ :parsed [:fn "Gen:Rate" [:tuple]]
+ :pos [-487 71]
+ }
+ "o4c37y7ohxtczp" 
+{:inputs ["a" "b" "more..."]
+ :label "*"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:free-var "b"] [:free-var "more..."]]
+ :pos [-404 71]
+ }
+ "pfs162o5zwq7ab1" 
+{:color 0
+ :inputs []
+ :label "(gate attack decay freq1 freq2 blend body tone) = arg"
+ :outputs ["gate" "attack" "decay" "freq1" "freq2" "blend" "body" "tone"]
+ :parsed "arg"
+ :pos [-444 -275]
+ }
+ "s4lz473kg1wl557" 
+{:inputs ["sig"]
+ :label "Control:Edge+($sig)"
+ :outputs [""]
+ :parsed [:fn "Control:Edge+" [:tuple [:free-var "sig"]]]
+ :pos [-274 6]
+ }
+ "ss29tcmch77zf6y" 
+{:inputs ["a" "b" "more..."]
+ :label "/"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "/" [:free-var "b"] [:free-var "more..."]]
+ :pos [-374 146]
+ }
+ "vnttsfzps683lk" 
+{:ephemeral-inputs #{"more" "more2"}
+ :inputs ["a" "b" "more" "more2" "more..."]
+ :label "*"
+ :outputs [""]
+ :parsed [:infix [:free-var "a"] "*" [:free-var "b"] [:free-var "more"] [:free-var "more2"] [:free-var "more..."]]
+ :pos [481 68]
+ }
+ "zfl15fq9qyfpxin" 
+{:inputs []
+ :label "1"
+ :outputs [""]
+ :parsed [:float "1"]
+ :pos [-464 146]
+ }}
+ :scale 1
+ :scroll [0 0]}}

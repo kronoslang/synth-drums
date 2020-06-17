@@ -1,0 +1,8 @@
+{
+  "description": "Analog-style synthetic drum sounds",
+  "dependencies": {},
+  "version": "0.1",
+  "license": "https://www.eclipse.org/legal/epl-v10.html",
+  "name": "Synth-Drums",
+  "url": "https://kronoslang.io"
+}
